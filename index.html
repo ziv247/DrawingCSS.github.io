@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="sky">
+
+        <div class="sun">
+            <div class="sun_beam"></div>
+            <div class="sun_beam"></div>
+            <div class="sun_beam"></div>
+            <div class="sun_beam"></div>
+        </div>
+
+        <div class="cloud">
+            <div class="cloud_ball"></div>
+            <div class="cloud_ball"></div>
+        </div>
+    </div>
+
+    <div class="grass"></div>
+
+    <div class="house">
+        <div class="roof"></div>
+        <div class="win_div">
+            <div class="window ">
+
+                <div class="win_line"></div>
+                <div class="win_line"></div>
+            </div>
+            <div class="window ">
+
+                <div class="win_line"></div>
+                <div class="win_line"></div>
+            </div>
+        </div>
+        <div class="door_open">
+            <div class="door door_outer">
+                <div class="handle"></div>
+            </div>
+            <div class="door door_inner"></div>
+        </div>
+    </div>
+    <div class="tree">
+        <div class="tree_leafs"></div>
+        <div class="tree_leafs"></div>
+        <div class="tree_leafs"></div>
+        <div class="tree_leafs"></div>
+        <div class="tree_leafs"></div>
+
+    </div>
+    <div class="container">
+
+
+
+        <div class="bird-container bird-container--one">
+            <div class="bird bird--one"></div>
+        </div>
+
+        <div class="bird-container bird-container--two">
+            <div class="bird bird--two"></div>
+        </div>
+
+        <div class="bird-container bird-container--three">
+            <div class="bird bird--three"></div>
+        </div>
+
+        <div class="bird-container bird-container--four">
+            <div class="bird bird--four"></div>
+        </div>
+
+    </div>
+
+    <div class="moon"></div>
+
+    <button id="switch" class="switch">NIGHT</button>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        for (var i = 0; i < 100; i++) {
+            var star = '<div class="star" style="animation: twinkle ' + ((Math.random() * 5) + 5) + 's linear ' + ((Math.random() * 5) + 5) + 's infinite; top: ' + Math.random() * $(window).height() + 'px; left: ' + Math.random() * $(window).width() + 'px;"></div>';
+            $('body').append(star);
+        }
+
+
+        $(document).on('click', 'button', function() {
+            $('body').toggleClass('night')
+
+            if ($('#switch').html() == 'NIGHT') {
+                $('#switch').html('DAY');
+            } else {
+                $('#switch').html('NIGHT');
+            }
+
+        })
+    </script>
+</body>
+
+</html>
